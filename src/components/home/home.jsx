@@ -1,11 +1,10 @@
 import "./home.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 import { FlipCardBack } from "../flipCardBack/flipCardBack";
 import { Link } from "react-router-dom";
 
-export const Home = () => {
+export const Home = (id) => {
   const [searchHero, setSearchHero] = useState("");
   const [hero, setHero] = useState([]);
 
@@ -18,7 +17,7 @@ export const Home = () => {
   };
 
   return (
-    <div className="text-center subtitle">
+    <div className="subtitle text-center">
       <div>
         <h1>Find new team members!</h1>
       </div>
@@ -52,22 +51,24 @@ export const Home = () => {
                 <div className="flip-card-front">
                   <img
                     src={heroe.image.url}
-                    alt="Imagen"
+                    alt="Hero Image"
                     style={{ width: "100%", height: "100%" }}
                   />
                   <p className="titleHero">{heroe.name}</p>
                 </div>
 
                 <div className="flip-card-back">
-                  <h1>Title</h1>
+                  <h2>Powerstats</h2>
                   <div>
                     <FlipCardBack />
                   </div>
                   <div className="buttonHero">
                     <div>
-                      <button type="button" className="btn btn-dark">
-                        Details
-                      </button>
+                      <Link to={`/character/${id}`}>
+                        <button type="button" className="btn btn-dark">
+                          Details
+                        </button>
+                      </Link>
                     </div>
                     <div>
                       <button type="button" className="btn btn-dark">

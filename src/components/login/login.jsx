@@ -1,11 +1,11 @@
 import "./login.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Link } from "react-router-dom";
 
 export const Login = () => {
   const [formularioEnviado, SetFormularioEnviado] = useState(false);
+
   return (
     <>
       <Formik
@@ -16,12 +16,12 @@ export const Login = () => {
         validate={(valores) => {
           let errores = {};
 
-          // Validacion correo
+          // Validación correo
           if (!valores.correo) {
             errores.correo = "Please enter your email";
           }
 
-          // Validacion password
+          // Validación password
           if (!valores.contraseña) {
             errores.contraseña = "Please enter your password";
           }
