@@ -45,7 +45,7 @@ export const Character = () => {
                 Height: <span>{detailHero.appearance.height}</span>
               </p>
               <p>
-                Hair color: <span>{detailHero.appearance.hair - color}</span>
+                Hair color: <span>{detailHero.appearance.height}</span>
               </p>
               <p>
                 Eye color: <span>{detailHero.appearance.height}</span>
