@@ -1,10 +1,10 @@
 import "./home.scss";
 import axios from "axios";
 import { useState } from "react";
-import { FlipCardBack } from "../flipCardBack/flipCardBack";
 import { Link } from "react-router-dom";
+import Chart from "../chart/chart";
 
-export const Home = (id) => {
+export const Home = () => {
   const [searchHero, setSearchHero] = useState("");
   const [hero, setHero] = useState([]);
 
@@ -58,13 +58,12 @@ export const Home = (id) => {
                 </div>
 
                 <div className="flip-card-back">
-                  <h2>Powerstats</h2>
                   <div>
-                    <FlipCardBack />
+                    <Chart />
                   </div>
                   <div className="buttonHero">
                     <div>
-                      <Link to={`/character/${id}`}>
+                      <Link to={`/character/${heroe.id}`}>
                         <button type="button" className="btn btn-dark">
                           Details
                         </button>

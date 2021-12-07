@@ -1,7 +1,6 @@
 import "./login.scss";
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Link } from "react-router-dom";
 
 export const Login = () => {
   const [formularioEnviado, SetFormularioEnviado] = useState(false);
