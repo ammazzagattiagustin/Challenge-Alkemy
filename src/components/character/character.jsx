@@ -39,16 +39,16 @@ export const Character = () => {
                 Work base: <span>{detailHero.work.base}</span>
               </p>
               <p>
+                Gender: <span>{detailHero.appearance.gender}</span>
+              </p>
+              <p>
+                Race: <span>{detailHero.appearance.race}</span>
+              </p>
+              <p>
                 Weight: <span>{detailHero.appearance.weight}</span>
               </p>
               <p>
                 Height: <span>{detailHero.appearance.height}</span>
-              </p>
-              <p>
-                Hair color: <span>{detailHero.appearance.height}</span>
-              </p>
-              <p>
-                Eye color: <span>{detailHero.appearance.height}</span>
               </p>
             </div>
           </div>

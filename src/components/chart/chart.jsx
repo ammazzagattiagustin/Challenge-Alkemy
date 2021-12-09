@@ -1,3 +1,4 @@
+import "./chart.scss";
 import {
   Radar,
   RadarChart,
@@ -6,40 +7,43 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 
-const data = [
-  {
-    subject: "Intelligence",
-    A: 40,
-    fullMark: 100,
-  },
-  {
-    subject: "Strength",
-    A: 50,
-    fullMark: 100,
-  },
-  {
-    subject: "Speed",
-    A: 60,
-    fullMark: 100,
-  },
-  {
-    subject: "Durability",
-    A: 70,
-    fullMark: 100,
-  },
-  {
-    subject: "Power",
-    A: 80,
-    fullMark: 100,
-  },
-  {
-    subject: "Combat",
-    A: 90,
-    fullMark: 100,
-  },
-];
+export default function Chart({ heroe }) {
 
-export default function Chart() {
+  const data = [
+    {
+      subject: "Intelligence",
+      A: `${heroe.powerstats.intelligence}`,
+      fullMark: 100,
+    },
+    {
+      subject: "Strength",
+      A: `${heroe.powerstats.strength}`,
+      fullMark: 100,
+    },
+    {
+      subject: "Speed",
+      A: `${heroe.powerstats.speed}`,
+      fullMark: 100,
+    },
+    {
+      subject: "Durability",
+      A: `${heroe.powerstats.durability}`,
+      fullMark: 100,
+    },
+    {
+      subject: "Power",
+      A: `${heroe.powerstats.power}`,
+      fullMark: 100,
+    },
+    {
+      subject: "Combat",
+      A: `${heroe.powerstats.combat}`,
+      fullMark: 100,
+    },
+  ];
+
+  console.log(data)
+
   return (
     <RadarChart
       cx={150}
@@ -51,7 +55,7 @@ export default function Chart() {
     >
       <PolarGrid />
       <PolarAngleAxis dataKey="subject" />
-      <PolarRadiusAxis />
+      <PolarRadiusAxis angle={30} domain={[0, 100]} />
       <Radar
         name="Hero"
         dataKey="A"
@@ -59,6 +63,6 @@ export default function Chart() {
         fill="#8884d8"
         fillOpacity={0.6}
       />
-    </RadarChart>
+    </RadarChart >
   );
 }

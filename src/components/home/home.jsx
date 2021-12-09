@@ -59,7 +59,13 @@ export const Home = () => {
 
                 <div className="flip-card-back">
                   <div>
-                    <Chart />
+                    {/*     <p>Intelligence: {heroe.powerstats.intelligence}</p>
+                    <p>Strength: {heroe.powerstats.strength}</p>
+                    <p>Speed: {heroe.powerstats.speed}</p>
+                    <p>Durability: {heroe.powerstats.durability}</p>
+                    <p>Power: {heroe.powerstats.power}</p>
+                    <p>Combat: {heroe.powerstats.combat}</p> */}
+                    <Chart heroe={heroe} />
                   </div>
                   <div className="buttonHero">
                     <div>
