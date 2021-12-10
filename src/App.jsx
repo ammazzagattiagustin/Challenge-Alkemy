@@ -1,7 +1,7 @@
 import { Navbar } from "./components/navbar/navbar";
 import { Login } from "./components/login/login";
 import { Home } from "./components/home/home";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Character } from "./components/character/character";
 /* import { Email, Password } from "./pages/singUp";
 import { Axios } from "axios";
@@ -25,19 +25,13 @@ function App() {
   } */
   return (
     <>
-      <Navbar />
       <BrowserRouter>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/character/:id">
-            <Character />
-          </Route>
-        </Switch>
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/character/:id" element={<Character />} />
+        </Routes>
       </BrowserRouter>
     </>
   );

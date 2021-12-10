@@ -59,12 +59,9 @@ export const Home = () => {
 
                 <div className="flip-card-back">
                   <div>
-                    {/*     <p>Intelligence: {heroe.powerstats.intelligence}</p>
-                    <p>Strength: {heroe.powerstats.strength}</p>
-                    <p>Speed: {heroe.powerstats.speed}</p>
-                    <p>Durability: {heroe.powerstats.durability}</p>
-                    <p>Power: {heroe.powerstats.power}</p>
-                    <p>Combat: {heroe.powerstats.combat}</p> */}
+                    <p className="alignmentHero">Good/Bad Hero: {heroe.biography.alignment}</p>
+                  </div>
+                  <div>
                     <Chart heroe={heroe} />
                   </div>
                   <div className="buttonHero">

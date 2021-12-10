@@ -1,7 +1,7 @@
 import "./character.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export const Character = () => {
   const { id } = useParams();
@@ -14,6 +14,12 @@ export const Character = () => {
       setDetailHero(data);
     });
   }, [id]);
+
+  const navigate = useNavigate()
+
+  const handleBack = () => {
+    navigate(-1)
+  }
 
   return (
     <div>
@@ -51,6 +57,7 @@ export const Character = () => {
                 Height: <span>{detailHero.appearance.height}</span>
               </p>
             </div>
+            <button onClick={handleBack} className="btn btn-outline-warning mb-3">Go Back</button>
           </div>
         </div>
       )}

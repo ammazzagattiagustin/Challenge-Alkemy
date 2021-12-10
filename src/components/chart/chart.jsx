@@ -1,4 +1,3 @@
-import "./chart.scss";
 import {
   Radar,
   RadarChart,
@@ -46,11 +45,11 @@ export default function Chart({ heroe }) {
 
   return (
     <RadarChart
-      cx={150}
-      cy={120}
-      outerRadius={85}
-      width={300}
-      height={250}
+      cx={150} //150
+      cy={105} //120
+      outerRadius={85} //85
+      width={300} //300
+      height={210} //250
       data={data}
     >
       <PolarGrid />
