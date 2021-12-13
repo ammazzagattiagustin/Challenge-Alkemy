@@ -39,22 +39,22 @@ export const Character = () => {
                 Full name: <span>{detailHero.name}</span>
               </p>
               <p>
-                Aliases: <span>{detailHero.biography.aliases}</span>
+                Aliases: <span>{detailHero.biography.aliases.join(", ")}</span>
               </p>
               <p>
                 Work base: <span>{detailHero.work.base}</span>
               </p>
               <p>
-                Gender: <span>{detailHero.appearance.gender}</span>
+                Weight: <span>{detailHero.appearance.weight[1]}</span>
               </p>
               <p>
-                Race: <span>{detailHero.appearance.race}</span>
+                Height: <span>{detailHero.appearance.height[1]}</span>
               </p>
               <p>
-                Weight: <span>{detailHero.appearance.weight}</span>
+                Hair color: <span>{detailHero.appearance["hair-color"]}</span>
               </p>
               <p>
-                Height: <span>{detailHero.appearance.height}</span>
+                Eye color: <span>{detailHero.appearance["eye-color"]}</span>
               </p>
             </div>
             <button onClick={handleBack} className="btn btn-outline-warning mb-3">Go Back</button>

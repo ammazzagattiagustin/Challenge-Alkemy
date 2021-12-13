@@ -3,6 +3,10 @@ import { Login } from "./components/login/login";
 import { Home } from "./components/home/home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Character } from "./components/character/character";
+import { Provider } from "./components/context/context";
+import { PruebaA } from "./components/context/pruebaA";
+import { PruebaB } from "./components/context/pruebaB";
+
 /* import { Email, Password } from "./pages/singUp";
 import { Axios } from "axios";
 import {
@@ -25,14 +29,18 @@ function App() {
   } */
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/character/:id" element={<Character />} />
-        </Routes>
-      </BrowserRouter>
+      <Provider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/character/:id" element={<Character />} />
+          </Routes>
+          <PruebaA />
+          <PruebaB />
+        </BrowserRouter>
+      </Provider>
     </>
   );
 }

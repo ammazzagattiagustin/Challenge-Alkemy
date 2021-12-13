@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-
 export const Navbar = () => {
 
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    navigate("/login")
+    navigate("/")
   }
 
   return (

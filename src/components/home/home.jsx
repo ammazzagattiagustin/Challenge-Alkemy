@@ -19,6 +19,9 @@ export const Home = () => {
   return (
     <div className="subtitle text-center">
       <div>
+        {!hero ? <h1>hola</h1> : <p>You still haven`t a team, start searching and adding a HERO</p>}
+      </div>
+      <div>
         <h1>Find new team members!</h1>
       </div>
 
@@ -34,7 +37,7 @@ export const Home = () => {
         </div>
         <div className="m-1">
           <button
-            type="button"
+            type="submit"
             className="btn btn-primary"
             onClick={handleClick}
           >
@@ -73,9 +76,11 @@ export const Home = () => {
                       </Link>
                     </div>
                     <div>
-                      <button type="button" className="btn btn-dark">
-                        Add hero
+                      <Link to={`/home/${heroe.id}`}>
+                        <button type="button" className="btn btn-dark">
+                          Add hero
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
