@@ -45,10 +45,10 @@ export const Character = () => {
                 Work base: <span>{detailHero.work.base}</span>
               </p>
               <p>
-                Weight: <span>{detailHero.appearance.weight[1]}</span>
+                Weight: <span>{detailHero.appearance.weight[0]}</span>
               </p>
               <p>
-                Height: <span>{detailHero.appearance.height[1]}</span>
+                Height: <span>{detailHero.appearance.height[0]}</span>
               </p>
               <p>
                 Hair color: <span>{detailHero.appearance["hair-color"]}</span>

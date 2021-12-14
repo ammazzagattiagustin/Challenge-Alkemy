@@ -1,10 +1,11 @@
 import "./home.scss";
-import axios from "axios";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Chart from "../chart/chart";
+import axios from "axios";
 
-export const Home = () => {
+export const Home = (heroe) => {
+
   const [searchHero, setSearchHero] = useState("");
   const [hero, setHero] = useState([]);
 
@@ -18,9 +19,9 @@ export const Home = () => {
 
   return (
     <div className="subtitle text-center">
-      <div>
+      {/*       <div>
         {!hero ? <h1>hola</h1> : <p>You still haven`t a team, start searching and adding a HERO</p>}
-      </div>
+      </div> */}
       <div>
         <h1>Find new team members!</h1>
       </div>
@@ -62,7 +63,11 @@ export const Home = () => {
 
                 <div className="flip-card-back">
                   <div>
-                    <p className="alignmentHero">Good/Bad Hero: {heroe.biography.alignment}</p>
+                    {heroe.biography.alignment === "good" ?
+                      <button className="alignmentHero btn btn-success btn-sm mt-1 mb-2">Hero</button>
+                      :
+                      <button className="alignmentHero btn btn-danger btn-sm mt-1 mb-2">Villain</button>
+                    }
                   </div>
                   <div>
                     <Chart heroe={heroe} />
@@ -76,11 +81,9 @@ export const Home = () => {
                       </Link>
                     </div>
                     <div>
-                      <Link to={`/home/${heroe.id}`}>
-                        <button type="button" className="btn btn-dark">
-                          Add hero
+                      <button className="btn btn-dark">
+                        Add hero
                       </button>
-                      </Link>
                     </div>
                   </div>
                 </div>

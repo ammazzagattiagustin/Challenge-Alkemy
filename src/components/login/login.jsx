@@ -1,73 +1,91 @@
 import "./login.scss";
-import { useState } from "react";
+import { useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../../auth/auth-context";
+import Swal from 'sweetalert2'
+import axios from "axios";
 
 export const Login = () => {
-  const [formularioEnviado, SetFormularioEnviado] = useState(false);
+  const authCtx = useContext(AuthContext);
+
+  const navigate = useNavigate()
 
   return (
     <>
       <Formik
         initialValues={{
-          correo: "",
-          contraseña: "",
+          email: "",
+          password: "",
         }}
-        validate={(valores) => {
+        validate={(values) => {
           let errores = {};
-
-          // Validación correo
-          if (!valores.correo) {
-            errores.correo = "Please enter your email";
+          //Validación email
+          if (!values.email) {
+            errores.email = "Please enter your email.";
+          } else if (
+            !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+              values.email
+            )
+          ) {
+            errores.email =
+              "May contain only letters, numbers, underscores, hyphens or periods.";
           }
-
-          // Validación password
-          if (!valores.contraseña) {
-            errores.contraseña = "Please enter your password";
+          //Validación password
+          if (!values.password) {
+            errores.password = "Please enter your password.";
           }
-
           return errores;
         }}
-        onSubmit={(valores, { resetForm }) => {
-          resetForm();
-          SetFormularioEnviado(true);
-          setTimeout(() => SetFormularioEnviado(false), 3000);
+        onSubmit={(values) => {
+          axios
+            .post("http://challenge-react.alkemy.org", values)
+            .then((res) => {
+              console.log(res.data.token);
+              authCtx.login(res.data.token);
+              localStorage.setItem("token", res.data.token);
+              navigate("/home");
+            })
+            .catch((err) => {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Incorrect Data!'
+              })
+            });
         }}
       >
         {({ errors }) => (
           <Form className="formulario container">
-            <div>
-              <label htmlFor="correo">Email</label>
-              <Field
-                type="email"
-                id="correo"
-                name="correo"
-                placeholder="email@email.com"
-              />
+            <div >
+              <label htmlFor="email">Email</label>
+              <Field id="email" type="email" name="email" placeholder="challenge@alkemy.org" />
               <ErrorMessage
-                name="correo"
-                component={() => <div className="error">{errors.correo}</div>}
+                name="email"
+                component={() => (
+                  <div className="error" >{errors.email}</div>
+                )}
               />
             </div>
-
-            <div>
-              <label htmlFor="contraseña">Password</label>
+            <div >
+              <label htmlFor="password">Password</label>
               <Field
+                id="password"
                 type="password"
-                id="contraseña"
-                name="contraseña"
-                placeholder="password"
+                name="password"
+                placeholder="react"
               />
               <ErrorMessage
-                name="contraseña"
+                name="password"
                 component={() => (
-                  <div className="error">{errors.contraseña}</div>
+                  <div className="error">{errors.password}</div>
                 )}
               />
             </div>
 
-            <button type="submit">Login</button>
-
-            {formularioEnviado && <p className="exito">Registered user!</p>}
+            <button type="submit">
+              Login
+            </button>
           </Form>
         )}
       </Formik>
