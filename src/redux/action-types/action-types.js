@@ -1,1 +1,3 @@
-export const ADD_HERO = "ADD_HERO";
+export const ActionTypes = {
+  ADD_HERO: "ADD_HERO",
+};

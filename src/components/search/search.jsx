@@ -4,7 +4,13 @@ import { useState } from "react";
 import Chart from "../chart/chart";
 import axios from "axios";
 
-export const Search = (heroe) => {
+import { addHero } from "../../redux/actions/actions"
+import { useDispatch, useSelector } from "react-redux";
+
+export const Search = ({ heroe, addHero }) => {
+
+  const products = useSelector((state) => state.hero.products);
+  const dispatch = useDispatch();
 
   const [searchHero, setSearchHero] = useState("");
   const [hero, setHero] = useState([]);
@@ -13,9 +19,10 @@ export const Search = (heroe) => {
     axios.get(`/10223769438797732/search/${searchHero}`).then((res) => {
       const data = res.data;
       setHero(data);
-      console.log(data.results);
+      /* dispatch(addHero(data.results)) */
     });
   };
+  console.log("Products :", products);
 
   return (
     <div className="searchColor text-center">
@@ -82,7 +89,7 @@ export const Search = (heroe) => {
                       </Link>
                     </div>
                     <div>
-                      <button className="btn btn-dark">
+                      <button onClick={() => dispatch({ type: "ADD_HERO", payload: heroe })} className="btn btn-dark">
                         Add hero
                       </button>
                     </div>
