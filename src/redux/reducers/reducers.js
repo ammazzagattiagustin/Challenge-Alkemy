@@ -1,5 +1,17 @@
-import { ActionTypes } from "../action-types/action-types"; // El signo * significa que estoy importando todo el contenido de action-types, ya que no lo estamos guardando en una constante.
+const Reducer = (cart = [], action) => {
+  if (action.type === "ADD") {
+    let tempcart = cart.filter((item) => item.id === action.payload.id);
+    if (tempcart < 1) {
+      return [...cart, action.payload];
+    } else {
+      return cart;
+    }
+  }
+  return cart;
+};
+export default Reducer;
 
+/* import { ActionTypes } from "../action-types/action-types"; 
 const initialState = {
   products: [],
 };
@@ -15,10 +27,11 @@ const heroReducer = (state = initialState, { type, payload }) => {
       } else {
         return state;
       }
-    /* return { ...state, products: payload }; */
+   
     default:
       return state;
   }
 };
 
 export default heroReducer;
+ */

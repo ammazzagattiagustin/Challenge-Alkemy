@@ -41,8 +41,6 @@ export default function Chart({ heroe }) {
     },
   ];
 
-  console.log(data)
-
   return (
     <RadarChart
       cx={150} //150

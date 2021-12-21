@@ -1,4 +1,4 @@
-import { ActionTypes } from "../action-types/action-types"; // El signo * significa que estoy importando todo el contenido de action-types, ya que no lo estamos guardando en una constante.
+/* import { ActionTypes } from "../action-types/action-types"; // El signo * significa que estoy importando todo el contenido de action-types, ya que no lo estamos guardando en una constante.
 
 export const addHero = (products) => {
   return {
@@ -6,3 +6,4 @@ export const addHero = (products) => {
     payload: products,
   };
 };
+ */
