@@ -1,4 +1,5 @@
 import "./home.scss"
+import { Navbar } from "../navbar/navbar";
 import { SelectedHero } from "../selectedHero/selectedHero"
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,6 +9,7 @@ export const Home = () => {
 
     return (
         <div>
+            <Navbar />
             {cart.length > 0 ? (
                 <div>
                     <SelectedHero />

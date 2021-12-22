@@ -1,9 +1,9 @@
 import "./search.scss";
-import { Link } from "react-router-dom";
-import { useState } from "react";
 import Chart from "../chart/chart";
 import axios from "axios";
-
+import { Navbar } from "../navbar/navbar";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export const Search = ({ heroe }) => {
@@ -25,6 +25,7 @@ export const Search = ({ heroe }) => {
 
   return (
     <div className="searchColor text-center">
+      <Navbar />
       <div>
         <h1 className="searchTitle">Find new team members</h1>
       </div>

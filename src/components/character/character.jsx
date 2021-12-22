@@ -1,5 +1,6 @@
 import "./character.scss";
 import axios from "axios";
+import { Navbar } from "../navbar/navbar";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -23,6 +24,7 @@ export const Character = () => {
 
   return (
     <div>
+      <Navbar />
       {detailHero && (
         <div className="container-fluid row">
           <div className="col-12 col-md-6 mt-5 text-center">
