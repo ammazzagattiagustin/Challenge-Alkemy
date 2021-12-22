@@ -1,6 +1,6 @@
 import { Navbar } from "./components/navbar/navbar";
 import { Login } from "./components/login/login";
-import Home from "./components/home/home";
+import { Home } from "./components/home/home";
 import { Search } from "./components/search/search";
 import { Character } from "./components/character/character";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
