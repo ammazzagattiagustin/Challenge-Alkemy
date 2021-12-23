@@ -1,11 +1,10 @@
 import "./home.scss"
 import { Navbar } from "../navbar/navbar";
 import { SelectedHero } from "../selectedHero/selectedHero"
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export const Home = () => {
     const cart = useSelector((state) => state);
-    const dispatch = useDispatch();
 
     return (
         <div>

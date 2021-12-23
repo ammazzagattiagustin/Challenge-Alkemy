@@ -30,7 +30,7 @@ export const Character = () => {
           <div className="col-12 col-md-6 mt-5 text-center">
             <img
               src={detailHero.image.url}
-              alt="Hero Image"
+              alt="Hero"
               style={{ width: "20rem", height: "20rem" }}
             />
           </div>

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 export const SelectedHero = () => {
     const cart = useSelector((state) => state);
-    console.log(cart);
     const dispatch = useDispatch();
 
     return (
@@ -32,7 +31,7 @@ export const SelectedHero = () => {
                                 <div className="flip-card-front">
                                     <img
                                         src={heroe.image.url}
-                                        alt="Hero Image"
+                                        alt="SuperHero "
                                         style={{ width: "100%", height: "100%" }}
                                     />
                                     <p className="cardTitle">{heroe.name}</p>
@@ -58,7 +57,7 @@ export const SelectedHero = () => {
                                             </Link>
                                         </div>
                                         <div>
-                                            <button type="button" className="btn btn-dark">Delete</button>
+                                            <button type="button" className="btn btn-dark" onClick={() => dispatch({ type: "REMOVE", payload: heroe })}>Delete</button>
                                         </div>
                                     </div>
                                 </div>
