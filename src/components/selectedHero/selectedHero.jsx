@@ -1,6 +1,8 @@
 import Chart from "../chart/chart";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Powerstats } from "../stats/powerstats";
+import { Appearances } from "../stats/appearances";
 
 export const SelectedHero = () => {
     const cart = useSelector((state) => state);
@@ -10,17 +12,19 @@ export const SelectedHero = () => {
         <div className="container">
             <div className="row text-white text-center">
                 <div className="col-12 col-md-6">
-                    <h5>This is</h5>
-                    <h2>Your Team</h2>
-                    <div className="mt-4">
-                        <p>Team Weight Average: 66.50 kg</p>
-                        <p>Team Height Average: 171.50 cm</p>
-                    </div>
+                    <h5>Your Team</h5>
+                    <h2>Appearances</h2>
+                    <Appearances />
                 </div>
                 <div className="col-12 col-md-6">
                     <h5>Your Team</h5>
                     <h2>Powerstats</h2>
+                    <Powerstats />
                 </div>
+            </div>
+
+            <div>
+                <h1 className="text-white text-center mt-2">This is Your Team</h1>
             </div>
 
             <div className="row row-cols-1 row-cols-md-3 mb-5">
