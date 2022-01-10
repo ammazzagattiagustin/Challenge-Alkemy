@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/72312430/148774557-19890f5e-d8c8-481f-9b87-6cab3c685390.png)
 
-SuperHero App desarrollada con React para Alkemy.
+# SuperHero App desarrollada con React para el challenge de Alkemy.
 
 Crea tu propio equipo de superheroes, eligiendo de los resultados obtenidos de SuperHeroAPI.
 
