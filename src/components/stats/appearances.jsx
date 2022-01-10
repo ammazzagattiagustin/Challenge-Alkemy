@@ -1,6 +1,5 @@
 import React from 'react'
 import { Jumbotron, Table, Col } from "react-bootstrap";
-import useStatsContext from "../context/statsContext";
 
 export const Appearances = () => {
     return (
