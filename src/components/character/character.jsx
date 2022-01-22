@@ -27,7 +27,7 @@ export const Character = () => {
       <Navbar />
       {detailHero && (
         <div className="container-fluid row">
-          <div className="col-12 col-md-6 mt-5 text-center">
+          <div className="col-12 col-md-6 mt-5 text-center animate__animated animate__fadeInLeft">
             <img
               src={detailHero.image.url}
               alt="Hero"

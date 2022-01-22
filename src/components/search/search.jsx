@@ -52,7 +52,7 @@ export const Search = ({ heroe }) => {
                 onClick={handleClick}
               >
                 Search
-          </button>
+              </button>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export const Search = ({ heroe }) => {
 
           <div className="row row-cols-1 row-cols-md-3 mb-5">
             {hero?.results?.map((heroe, pos) => (
-              <div className="col mt-5" key={pos}>
+              <div className="col mt-5  animate__animated animate__fadeIn" key={pos}>
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -90,13 +90,13 @@ export const Search = ({ heroe }) => {
                           <Link to={`/character/${heroe.id}`}>
                             <button type="button" className="btn btn-dark">
                               Details
-                        </button>
+                            </button>
                           </Link>
                         </div>
                         <div>
                           <button onClick={() => dispatch({ type: "ADD", payload: heroe })} className="btn btn-dark">
                             Add hero
-                      </button>
+                          </button>
                         </div>
                       </div>
                     </div>
