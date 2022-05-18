@@ -15,8 +15,8 @@ export const Login = () => {
     <>
       <Formik
         initialValues={{
-          email: "",
-          password: "",
+          email: "challenge@alkemy.org",
+          password: "react",
         }}
         validate={(values) => {
           let errores = {};

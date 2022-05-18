@@ -15,7 +15,7 @@ function App() {
           <Route path="/character/:id" element={<Character />} />
           <Route
             path="*"
-            element={<Navigate to="/" />}
+            element={<Navigate to="/home" />}
           />
         </Routes>
       </BrowserRouter>
