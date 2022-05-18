@@ -1,13 +1,13 @@
 import "./login.scss";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import AuthContext from "../../auth/auth-context";
+/* import { useContext } from "react";
+import AuthContext from "../../auth/auth-context"; */
 import Swal from 'sweetalert2'
 import axios from "axios";
 
 export const Login = () => {
-  const authCtx = useContext(AuthContext);
+  /*   const authCtx = useContext(AuthContext); */
 
   const navigate = useNavigate()
 
@@ -15,8 +15,8 @@ export const Login = () => {
     <>
       <Formik
         initialValues={{
-          email: "challenge@alkemy.org",
-          password: "react",
+          email: "",
+          password: "",
         }}
         validate={(values) => {
           let errores = {};
@@ -38,21 +38,22 @@ export const Login = () => {
           return errores;
         }}
         onSubmit={(values) => {
-          axios
-            .post("http://challenge-react.alkemy.org", values)
-            .then((res) => {
-              console.log(res.data.token);
-              authCtx.login(res.data.token);
-              localStorage.setItem("token", res.data.token);
-              navigate("/home");
-            })
-            .catch((err) => {
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Incorrect Data!'
-              })
-            });
+          navigate("/home");
+          /*           axios
+                      .post("http://challenge-react.alkemy.org", values)
+                      .then((res) => {
+                        console.log(res.data.token);
+                        authCtx.login(res.data.token);
+                        localStorage.setItem("token", res.data.token);
+                        navigate("/home");
+                      })
+                      .catch((err) => {
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: 'Incorrect Data!'
+                        })
+                      }); */
         }}
       >
         {({ errors }) => (
